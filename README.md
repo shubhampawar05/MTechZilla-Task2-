@@ -1,8 +1,37 @@
-# React + Vite
+# GitFinder
+================
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based GitHub profile finder app that allows users to search for their GitHub profiles and display their profile information.
 
-Currently, two official plugins are available:
+## Features
+------------
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* Search for GitHub profiles by username
+* Display profile information, including:
+	+ Avatar
+	+ Username
+	+ Name
+	+ Public repositories
+	+ Public gists
+	+ Followers
+	+ Following
+	+ Created at date
+* Loading animation while searching for profiles
+* Error handling for invalid usernames
+
+## Technologies Used
+--------------------
+
+* React
+* Axios for API requests
+* dayjs for date formatting
+* React Icons for icons
+* CSS for styling
+
+## Getting Started
+---------------
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/your-username/gitfinder.git
+```

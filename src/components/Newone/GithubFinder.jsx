@@ -21,12 +21,14 @@ const GithubFinder = () => {
       console.log(response);
       setUserProfile(response.data);
       setLoading(null);
+      
     } catch (err) {
       setLoading(true);
       console.log(err);
       setLoading("User not found");
       setUserData(null);
     }
+    
   };
 
   const handleSubmit = (event) => {
@@ -34,7 +36,9 @@ const GithubFinder = () => {
     console.log(input);
     if (input) {
       fetchUserProfile(input);
+      setInput('');
     }
+ 
   };
 
   return (
@@ -58,7 +62,7 @@ const GithubFinder = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-[#0b1339] to-pink-500 opacity-65"></div>
 
         {loading===true ? (<>
-          <div className=" flex items-center justify-center ">
+          <div className=" flex items-center justify-center z-10 mix-blend-multiply ">
             <img src={github} alt="" className=" animate-moveUpDown transition-all  mix-blend-multiply z-10 "/>
 
           </div>
@@ -86,7 +90,7 @@ const GithubFinder = () => {
               </button>
             </div>
           </div>
-        ) : (
+        ) : (<>
           <div className="z-10 text-white p-2 rounded-xl shadow-xl flex sm:gap-4 gap-2 flex-col sm:flex-row -mt-2 sm:mt-0 max-w-screen-md mx-auto border">
             <div>
               <img src={userProfile?.avatar_url} alt="" className=" sm:w-80 sm:h-80 w-40 h-40  rounded " />
@@ -109,6 +113,10 @@ const GithubFinder = () => {
               </div>
             </div>
           </div>
+          <button className=" hidden sm:block z-10 mt-2 text-white sm:text-2xl text-xl font-bold capitalize rounded border-2  px-4 py-1 mx-auto "
+          onClick={()=>setUserProfile(null)}
+          >Back TO Main Page</button>
+        </>
         )}
         </>)}
       
